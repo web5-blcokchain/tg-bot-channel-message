@@ -50,7 +50,8 @@ async function sendWelcomeMessage(chatId) {
     const messageText = `
 🤖 **Welcome to BrightHub!** 🤖
 
-Click the button below to explore more features and stay updated!
+Click the button below to explore more features and stay updated!\n
+[Channel](https://t.me/brighthubfinance) | [Chat](https://t.me/BrightHub_Finance) | [X](https://x.com/brighthub_fi?s=21) | [Medium](https://medium.com/@brighthub888/)
     `;
 
     const keyboard = new InlineKeyboard()
@@ -77,11 +78,11 @@ bot.command("announce", async (ctx) => {
     const isAllowedGroup = ALLOWED_GROUP_IDS.includes(chatId);
 
     if (!isPrivate && !isAllowedGroup) {
-        return ctx.reply("⚠️ 此命令仅限私聊或特定群组使用。");
+        // return ctx.reply("⚠️ 此命令仅限私聊或特定群组使用。");
     }
 
     if (ctx.from?.id !== ADMIN_ID) {
-        return ctx.reply("⚠️ 无权操作");
+        // return ctx.reply("⚠️ 无权操作");
     }
 
     await sendAnnouncement();

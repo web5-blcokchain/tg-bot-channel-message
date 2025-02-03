@@ -131,6 +131,30 @@ https://api.telegram.org/bot7925088010:xxxxxxxxx-yTfYPFnqDoI/getUpdates。输出
 ```
 其中`10202412348803` 就是chat ID 
 
+拓展方法
+```
+获取Telegram的Chat ID最简单的方式之一是使用一个专门用于获取Chat ID的Telegram Bot。以下是具体步骤：
+
+1. **创建一个Telegram Bot**：
+   - 在Telegram中搜索`@BotFather`。
+   - 发送`/newbot`命令，按照提示创建一个新的Bot。
+   - 创建完成后，你会获得一个Bot的Token（一串字符，类似于`123456789:ABCdefGhIJKlmNoPQRstuVWXyz`）。
+
+2. **使用Bot获取Chat ID**：
+   - 将你刚刚创建的Bot添加到你想获取Chat ID的群组或频道中。
+   - 在群组或频道中发送一条消息（可以是任意内容）。
+   - 使用浏览器访问以下URL（将`YOUR_BOT_TOKEN`替换为你的Bot Token）：
+     ```
+     https://api.telegram.org/botYOUR_BOT_TOKEN/getUpdates
+     ```
+   - 在返回的JSON数据中，找到`"chat":{"id":xxxxxx}`部分，其中的`xxxxxx`就是你要的Chat ID。
+
+3. **直接使用Userinfobot**：
+   - 如果你只是想获取个人聊天或群组的Chat ID，可以使用现成的Bot，比如`@userinfobot`。
+   - 在Telegram中搜索`@userinfobot`并启动它。
+   - 将你想获取Chat ID的聊天消息转发给`@userinfobot`，它会返回Chat ID。
+ 
+```
 ### **3. 关键点总结**  
 - **权限管理**：确保 Bot 具备所需的频道权限，尤其是发送和置顶消息的权限。  
 - **稳定性**：使用 PM2 等工具保证 Bot 稳定运行。  
