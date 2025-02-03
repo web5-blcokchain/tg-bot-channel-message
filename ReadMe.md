@@ -88,6 +88,49 @@
 
 ---
 
+
+### 注意事项
+关于CHANNEL_ID的获取，机器人拉入channel并被授予发布内容和置顶消息权限后。浏览器访问如下链接
+https://api.telegram.org/bot7925088010:xxxxxxxxx-yTfYPFnqDoI/getUpdates。输出如下
+
+```
+{
+    "ok": true,
+    "result": [
+        {
+            "update_id": 408204521,
+            "my_chat_member": {
+                "chat": {
+                    "id": -10202412348803,
+                    "title": "Bright Hub Finance",
+                    "username": "brighthubfinance",
+                    "type": "channel"
+                },
+                "from": {
+                    "id": 629679552,
+                    "is_bot": false,
+                    "first_name": "Willies.io",
+                    "username": "williesm",
+                    "language_code": "en"
+                },
+                "date": 1738606319,
+                "old_chat_member": {
+                    "user": {
+                        "id": 7925088010,
+                        "is_bot": true,
+                        "first_name": "BrightHub",
+                        "username": "BrightHub_bot"
+                    },
+                    "status": "left"
+                },
+                 
+            }
+        }
+    ]
+}
+```
+其中`10202412348803` 就是chat ID 
+
 ### **3. 关键点总结**  
 - **权限管理**：确保 Bot 具备所需的频道权限，尤其是发送和置顶消息的权限。  
 - **稳定性**：使用 PM2 等工具保证 Bot 稳定运行。  

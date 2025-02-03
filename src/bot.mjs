@@ -7,7 +7,7 @@ const bot = new Bot(process.env.BOT_TOKEN);
 console.log('bot token : ', process.env.BOT_TOKEN);
 
 // 配置常量
-const CHANNEL_ID = "-1002284967380";
+const CHANNEL_ID = "-1002412348803";
 const BOT_USERNAME = "BrightHub_bot";
 const ADMIN_ID = parseInt(process.env.ADMIN_ID);
 const ALLOWED_GROUP_IDS = [-1001234567890, -1009876543210];
